@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ddd;
+            align-items: center;
+            justify-content: center;
+            min-width:900px ;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        table {
+            max-width:30%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 2px solid rgb(2, 1, 1);
+            background-color: white; /* Atau warna latar belakang yang diinginkan untuk tabel */
+            
+        }
+
+        th,
+        td {
+            border: 2px solid rgb(144, 148, 148);
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+      background-color: #f2f2f2;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0 ;
+        background-color: rgb(162, 162, 162);
+        z-index: 1;
+
+
+}
+    nav ul{
+    display: flex;
+    list-style: none;
+    width: 35%;
+    justify-content: space-between;
+    padding-top:0.2em;
+
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size:0.8em;
+    font-family: 'ubuntu', sans-serif;
+}
+#About {
+  padding: 20px 10px 20px 40px;
+  border:1px solid ;
+}
+#About p{
+  font-size: 0.8em;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+#About h2 {
+  text-align: center;
+}
+
+aside.info {
+  background-color:var(--mainColor);
+  text-align: center;
+  font-size: 0.9em;
+
+  order: 2;
+}
+main {
+  display: flex;
+  gap: 50px;
+  padding: 100px 15px 15px 15px;
+}
+
+.info img{
+
+background: linear-gradient(0deg, rgb(154, 134, 108) 100%,rgba(46, 42, 41, 0.958)50%);
+}
+.info article{
+background-color:var(--navColor);
+border: 1px solid black;
+padding: 15px;
+}
+/* humberger menu */
+.menu-toggle{
+    display:flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    display: none;
+    cursor: pointer;
+    margin-left:80%;
+}
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border: 3px;
+
+}
+.p1{
+    font-size: 0.9em;
+}
+
+@media(max-width:768px){
+    nav ul{
+        width: 50%;
+    }
+}
+
+@media(max-width:640px){
+    main {
+    flex-direction: column;
+}
+}
+@media(max-width:540px){
+    .menu-toggle{
+        display:flex;
+        z-index: 1;
+
+    }
+    nav ul{
+        position:absolute;
+        right:0;
+        top: 0;
+        height:100vh;
+        justify-content:space-evenly ;
+        flex-direction: column;
+        align-items:center;
+        transition:  1s;
+        width: 80%;
+    }
+    nav ul li a:hover{
+        color:rgba(204, 152, 19, 0.234);
+    }
+    .navbar{
+        transform: translate(100%);
+    }
+
+
+
+
+    .navbar.active {
+        display:flex; /* Atur tampilan navbar ketika menu-toggle memiliki kelas 'show' */
+        /* Tambahan tampilan lainnya sesuai kebutuhan Anda */
+        transform: translateX(0);
+      }
+    div.logo{
+        display: none;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+          <div class="logo">
+            <h1>Suku<span>Bunga</span></h1>
+          </div>
+            <ul class="navbar">
+              <li><a href="#">Home</a></li>
+              <li><a href="#About">About</a></li>
+              <li><a href="#main1">Tabel Brosur</a></li>
+              <li><a href="#main2">Analisis</a></li>
+          </ul>
+          <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+         </nav>
+
+         <main>
+            <!-- side bar -->
+            <aside class="info">
+                <article>
+                    <p>Nama Anggota Kelompok </p>
+                    <pre>1.Sarmila S</pre>
+                    <pre>2.Bayu</pre>
+                    <pre>3.Syahrul Ramadhan Tahir</pre>
+                </article>
+            </aside>
+      
+            <!-- artikel -->
+            <article id="About">
+                <h2>Tentang Proyek</h2>
+                    <p style="font-size:0.9em; text-align: justify;">Suku bunga pinjaman adalah tingkatan bunga yang ditetapkan bank/instansi dan harus dibayarkan pemujam sebagai imbalan <br>atas pinjaman yang diberikan bank/instansi.suku bunga memiliki beberpa fungsi. Pertama, sebagai penarik minat nasabah<br> untuk menabug atau menginvestasi dana mereka</br></p>
+                    <br></br>
+      
+            </article>
+        </main>
+    <table id="main1">
+        <tr>
+            <th rowspan="2" colspan="2">plafond</th>
+            <th colspan="6">jangka waktu</th>
+
+        </tr>
+        <tr>
+            <th>6 bulan</th>
+            <th>12 bulan</th>
+            <th>18 bulan</th>
+            <th>24 bulan</th>
+            <th>30 bulan</th>
+            <th>36 bulan</th>
+
+        </tr>
+
+        <tr>
+            <th>Pinjaman</th>
+            <th>bunga</th>
+            <td colspan="6"> Angsuran</td>
+        </tr>
+        <tr>
+            <td>45.000.000</td>
+            <td rowspan="4">1,55%</td>
+            <td>8.197.500</td>
+            <td>4.447.500</td>
+            <td>3.197.500 </td>
+            <td>2.572.500</td>
+            <td>2.197.500</td>
+            <td>1.947.500</td>
+
+        </tr>
+        <tr>
+            <td>50.000.000</td>
+            <td>9.108.400</td>
+            <td>4.941.700</td>
+            <td>3.552.800</td>
+            <td>2.858.400</td>
+            <td>2.441.700</td>
+            <td>2.163.900</td>
+        
+            
+        </tr>
+
+        <tr>
+            <td>60.000.000</td>
+            <td>10.930.000</td>
+            <td>5.930.400</td>
+            <td>4.263.400</td>
+            <td>3.430.000</td>
+            <td>2.930.000</td>
+            <td>2.596.700</td>
+
+        </tr>
+        <tr>
+            <td>70.000.000</td>
+            <td>12.751.700</td>
+            <td>6.918.400</td>
+            <td>4.973.900</td>
+            <td>4.001.700</td>
+            <td>3.418.400</td>
+            <td>3.029.500</td>
+        </tr>
+        <tr>
+            <th>Pinjaman</th>
+            <th>bunga</th>
+            <td colspan="6"> Angsuran</td>
+        </tr>
+        <tr>
+            <td>11.000.000</td>
+            <td rowspan="4">1,65%</td>
+            <td>2.014.900</td>
+            <td>1.098.200</td>
+            <td>792.700</td>
+            <td>639.900</td>
+            <td>549.200</td>
+            <td>487.100</td>
+
+        </tr>
+        <tr>
+            <td>15.000.000</td>
+            <td>2.747.500</td>
+            <td>1.497.500</td>
+            <td>1.808.900</td>
+            <td>872.500</td>
+            <td>747.500</td>
+            <td>664.200</td>
+        </tr>
+        <tr>
+            <td>20.000.000</td>
+            <td>3.663.400</td>
+            <td>1.996.700</td>
+            <td>1.441.200</td>
+            <td>1.163.400</td>
+            <td>996.700</td>
+            <td>885.600</td>
+        </tr>
+        <tr>
+            <td>25.0000.000</td>
+            <td>4.579.200</td>
+            <td>2.495.900</td>
+            <td>1.801.400</td>
+            <td>1.454.200</td>
+            <td>1.245.900</td>
+            <td>1.107.000</td>
+
+        </tr>
+        
+    </table>
+    <table id="main2">
+            <tr>
+                <th rowspan="3">pinjaman</th>
+                <th colspan="18">Hasil Analisis</th>
+    
+            </tr>
+            <tr>
+                <th colspan="3">6 bulan</th>
+                <th colspan="3">12 bulan</th>
+                <th colspan="3">18 bulan</th>
+                <th colspan="3">24 bulan</th>
+                <th colspan="3">30 bulan</th>
+                <th colspan="3">36 bulan</th>
+    
+            </tr>
+            <tr>
+                <td>suku bunga</td>
+                <td>Bunga</td>
+                <td>Total pelunasan</td>
+                <td>suku bunga</td>
+                <td>Bunga</td>
+                <td>Total pelunasan</td>
+                <td>suku bunga</td>
+                <td>Bunga</td>
+                <td>Total pelunasan</td>
+                <td>suku bunga</td>
+                <td>Bunga</td>
+                <td>Total pelunasan</td>
+                <td>suku bunga</td>
+                <td>Bunga</td>
+                <td>Total pelunasan</td>
+                <td>suku bunga</td>
+                <td>bunga</td>
+                <td>Total pelunasan</td>
+            </tr>
+            <tr>
+                <td>45.000.000</td>
+                <td rowspan="4">9,3%</td>
+                <td>4.185.000</td>
+                <td>49.185.000</td>
+                <td rowspan="4">18,6%</td>
+                <td>8.370.000</td>
+                <td>53.370.000</td>
+                <td rowspan="4">27,9%</td>
+                <td>12.555.000</td>
+                <td>57.555.000</td>
+                <td rowspan="4">37,2%</td>
+                <td>16.740.000</td>
+                <td>61.740.000</td>
+                <td rowspan="4">46,5%</td>
+                <td>20.925.000</td>
+                <td>65.925.000</td>
+                <td rowspan="4">55,8%</td>
+                <td>25.110.000</td>
+                <td>70.110.000</td>
+
+                
+            </tr>
+            <tr>
+                <td>50.000.000</td>
+                <td>4.650.000</td>
+                <td>54.650.000</td>
+                <td>9.300.000</td>
+                <td>59.300.000</td>
+                <td>15.500.000</td>
+                <td>63.500.000</td>
+                <td>18.600.000</td>
+                <td>68.600.000</td>
+                <td>23.250.000</td>
+                <td>73.250.000</td>
+                <td>27.900.000</td>
+                <td>77.900.000</td>
+            </tr>
+            <tr>
+                <td>60.000.000</td>
+                <td>5.580.000</td>
+                <td>65.580.000</td>
+                <td>11.160.000</td>
+                <td>71.160.000</td>
+                <td>16.740.000</td>
+                <td>76.740.000</td>
+                <td>22.320.000</td>
+                <td>82.320.000</td>
+                <td>27.900.000</td>
+                <td>87.900.000</td>
+                <td>33.480.000</td>
+                <td>93.480.000</td>
+            </tr>
+           <tr>
+            <td>70.000.000</td>
+            <td>6.510.000</td>
+            <td>76.510.000</td>
+            <td>13.020.000</td>
+            <td>83.020.000</td>
+            <td>19.530.000</td>
+            <td>89.530.000</td>
+            <td>26.040.000</td>
+            <td>96.040.000</td>
+            <td>32.550.000</td>
+            <td>102.550.000</td>
+            <td>39.060.000</td>
+            <td>109.060.000</td>
+           </tr> 
+           <tr>
+            <th>Pinjaman</th>
+            <td>suku bunga</td>
+            <td>Bunga</td>
+            <td>Total Pelunasan</td>
+            <td>suku bunga</td>
+            <td>Bunga</td>
+            <td>Total Pelunasan</td>
+            <td>suku bunga</td>
+            <td>Bunga</td>
+            <td>Total Pelunasan</td>
+            <td>suku bunga</td>
+            <td>Bunga</td>
+            <td>Total Pelunasan</td>
+            <td>suku bunga</td>
+            <td>Bunga</td>
+            <td>Total Pelunasan</td>
+            <td>suku bunga</td>
+            <td>Bunga</td>
+            <td>Total Pelunasan</td>
+
+
+
+            
+
+           </tr>
+           <tr>
+            <td>11.000.000</td>
+            <td rowspan="4">9,9%</td>
+            <td>1.089.000</td>
+            <td>12.089.000</td>
+            <td rowspan="4">19,8%</td>
+            <td>2.178.000</td>
+            <td>13.178.000</td>
+            <td rowspan="4">29,7%</td>
+            <td>3.267.000</td>
+            <td>14.267.000</td>
+            <td rowspan="4">39,6%</td>
+            <td>4.356.000</td>
+            <td>15.356.000</td>
+            <td rowspan="4">49,5%</td>
+            <td>5.445.000</td>
+            <td>16.445.000</td>
+            <td rowspan="4">59,4%</td>
+            <td>6.534.000</td>
+            <td>17.534.000</td>
+
+
+           </tr>
+           <tr>
+            <td>15.000.000</td>
+            <td>1.485.000</td>
+            <td>16.485.000</td>
+            <td>2.970.000</td>
+            <td>17.970.000</td>
+            <td>4.455.000</td>
+            <td>19.455.000</td>
+            <td>5.940.000</td>
+            <td>20.940.000</td>
+            <td>7.425.000</td>
+            <td>22.425.000</td>
+            <td>8.910.000</td>
+            <td>23.910.000</td>
+
+
+
+           </tr>
+           <tr>
+            <td>20.000.000</td>
+            <td>1.980.000</td>
+            <td>21.980.000</td>
+            <td>3.960.000</td>
+            <td>23.960.000</td>
+            <td>5.940.000</td>
+            <td>25.940.000</td>
+            <td>7.920.000</td>
+            <td>27.920.000</td>
+            <td>9.900.000</td>
+            <td>29.900.000</td>
+            <td>11.880.000</td>
+            <td>31.880.000</td>
+           </tr>
+           <tr>
+            <td>25.000.000</td>
+            <td>2.475.000</td>
+            <td>27.475.000</td>
+            <td>4.950.000</td>
+            <td>29.950.000</td>
+            <td>7.425.000</td>
+            <td>32.425.000</td>
+            <td>9.900.000</td>
+            <td>34.900.000</td>
+            <td>12.375.000</td>
+            <td>37.375.000</td>
+            <td>13.600.000</td>
+            <td>38.600.000</td>
+           </tr>
+    </table>
+    <div class="p1">
+        <h3>Penjelasan analisis</h3>
+        <p>Misalkan pinjamannya Rp45.000.000, bunga perbulannya 1,55% dan angsuran 6 bulan yaitu 8.197.500</p>
+        <p>1. untuk mencari suku bunga selama 6 bulan yaitu dengan cara 1,55% x 6 bulan(bunga x angsuran bulan) maka diperoleh hasil 9,3% untuk suku bunga dengan angsuran 6 bulan </p>
+        <p>2. sedangkan untuk mencari Bunga yaitu suku bunga yang di dapatkan dikalikan dengan pinjaman. 9,3% x 45.000.000 (suku bunga x pinjaman) = 4.185.000</p>
+        <p>3. Adapun untuk mencari total pelunasan cukup dengan menambahkan bunga yang di dapat dengan pinjaman. 4.185.000 + 45.000.000 </p>
+        <p>untuk mengecek total pelunasan pinjaman bisa dengan anguran x bulan(8.197.500 x 6) = 49.185.000. karena pengecekannya sama dengan total pelunasan maka pengecekan ini dianggap benar.</p>
+    </div>
+
+    <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navList = document.querySelector(".navbar");
+        
+        menuToggle.addEventListener("click", () => {
+          navList.classList.toggle("active");
+        });
+        
+        // Tambahkan event listener untuk item navbar
+        const navItems = document.querySelectorAll(".navbar li a");
+        navItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            navList.classList.remove("active"); // Sembunyikan isi navbar
+          });
+        });
+    </script>
+</body>
+
+</html>
